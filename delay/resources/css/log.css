@@ -1,0 +1,111 @@
+body{
+    background-color: #000000;
+}
+
+.logo{
+    background: url('C:/University/WEB-Project/delay/delay/public/background.gif');
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: Cherish;
+    font-size: 250px;
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.reg{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 25px;
+}
+
+
+.containerReg{
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-box input {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffffff;
+    transition: all 0.1s ease;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid #343434;
+    position: relative;
+    margin-top: 20px;
+}
+
+.input-box input[type='text']:focus,
+.input-box input[type='password']:focus{
+    animation: gradient 5s ease infinite;
+}
+
+
+@keyframes gradient {
+    0% {border-bottom: 1.5px solid #000;}
+    50% {border-bottom: 1.5px solid #fff;}
+    100% {border-bottom: 1.5px solid #000;}
+}
+
+.input-box input:-webkit-autofill,
+.input-box input:-webkit-autofill:hover,
+.input-box input:-webkit-autofill:focus,
+.input-box input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.button input[type="submit"] {
+    font-size: 15px;
+    margin-top: 50px;
+    background-color: #000000;
+    border-radius: 100px;
+    color: #ffffff;
+    padding: 10px 25px;
+    text-align: center;
+    transition: all 0.5s ease;
+    border: 1px solid #808080;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+.button input[type="submit"]:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.text{
+    font-size: 10px;
+    font-family: "Montserrat ExtraLight", serif;
+    text-align: center;
+    color: white;
+}
+
+.text a {
+    color: white;
+    text-decoration: none;
+}
+
+.text a:hover{
+    border-bottom: white solid 1px;
+}
+
+.error{
+    font-family: "Montserrat ExtraLight", serif;
+    color: red;
+    font-size: 12px;
+    position: absolute;
+}
