@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     @vite(['resources/css/reg.css'])
-{{--    @vite(['resources/js/regValidation.js'])--}}
+    @vite(['resources/js/eyeCheckerReg.js'])
+    <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="containerReg">
     <div class="reg">
         Регистрация
     </div>
-    <form action="/new" method="post">
+    <form action="/registration/check" method="post">
         @csrf
         <div class="input-box">
             <input type="text" id="login" name="login" placeholder="Логин" title="Логин - это уникальное имя, от которого публикуются ваши треки" required>
@@ -28,6 +29,7 @@
                     {{ $errors->first('password') }}
                 @endif
         </span>
+            <div class="i1 fa-solid fa-eye Eyecon"></div>
         </div>
 
         <div class="input-box">
@@ -37,6 +39,7 @@
                     {{ $errors->first('password_confirmation') }}
                 @endif
         </span>
+            <div class="i2 fa-solid fa-eye Eyecon"></div>
         </div>
         <div class="button">
             <input type="submit" value="Зарегистрироваться">

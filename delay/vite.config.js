@@ -9,7 +9,8 @@ export default defineConfig({
                 'resources/css/log.css',
                 'resources/css/new.css',
                 'resources/js/logValidation.js',
-                'resources/js/regValidation.js'
+                'resources/js/eyeCheckerReg.js',
+                'resources/js/eyeCheckerLog.js',
             ],
             refresh: true,
         }),

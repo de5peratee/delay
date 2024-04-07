@@ -109,3 +109,30 @@ body{
     font-size: 11px;
     position: absolute;
 }
+
+.input-box .i1,
+.input-box .i2 {
+    position: absolute;
+    right: 5px;
+    font-size: 1em;
+    color: #343434FF;
+    transition: color 0.3s ease;
+}
+.input-box .i1 {
+    bottom: 190px;
+}
+.input-box .i2 {
+    bottom: 130px;
+}
+.input-box .i1:hover,
+.input-box .i2:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.input-box .i1.active,
+.input-box .i2.active {
+    color: white;
+}
+
+

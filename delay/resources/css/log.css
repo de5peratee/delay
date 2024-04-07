@@ -109,3 +109,19 @@ body{
     font-size: 11px;
     position: absolute;
 }
+
+.input-box .i1{
+    position: absolute;
+    right: 5px;
+    font-size: 1em;
+    color: #343434FF;
+    transition: color 0.3s ease;
+    bottom: 130px;
+}
+.input-box .i1:hover{
+    color: white;
+    cursor: pointer;
+}
+.input-box .i1.active{
+    color: white;
+}

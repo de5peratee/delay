@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Listeners extends Model{
-    use HasFactory;
+class Listeners extends Model implements Authenticatable {
+    use HasFactory, \Illuminate\Auth\Authenticatable;
+
     protected $table = 'listeners';
     protected $fillable = ['Login', 'Password', 'Personal_information', 'Status'];
 }
