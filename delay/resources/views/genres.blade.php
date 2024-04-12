@@ -2,7 +2,7 @@
 <html lang="RU">
 <head>
     <meta charset="UTF-8">
-    @vite(['resources/css/new.css'])
+    @vite(['resources/css/genres.css'])
     @vite(['resources/css/burgerMenu.css'])
     <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
 </head>
@@ -42,18 +42,14 @@
 
 <div class="input-box">
     <input type="text" id="search" placeholder="Поиск" required>
-    <div class="filter">
-        <span class="button-text">Фильтр</span>
-        <i class="fa-solid fa-filter"></i>
-    </div>
 </div>
 
 <div class="sidebar">
     <ul>
-        <li><a class="active" href="/new">Новинки</a></li>
+        <li><a href="/new"><span>Новинки</span></a></li>
         <li><a href="/popular"><span>Популярное</span></a></li>
         <li><a href="/musician"><span>Исполнители</span></a></li>
-        <li><a href="/genres"><span>Жанры</span></a></li>
+        <li><a class="active" href="/genres">Жанры</a></li>
     </ul>
 </div>
 

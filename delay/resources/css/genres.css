@@ -22,33 +22,11 @@ body{
     align-items: center;
 }
 
-.filter {
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    border: 1px solid white;
-    border-radius: 30px;
-    margin-top:80px;
-    margin-left:10px;
-    cursor: pointer;
-}
-
-.button-text {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    margin-right: 5px;
-    font-size: 12px;
-}
-
-.fa-solid {
-    color: #ffffff;
-}
-
 .input-box input {
     font-family: 'Montserrat', sans-serif;
     padding-top: 20px;
     height: 100%;
-    width: 30%;
+    width: 39%;
     outline: none;
     font-size: 15px;
     font-weight: 400;
@@ -117,12 +95,3 @@ body{
     color: white;
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
