@@ -25,7 +25,7 @@
             </li>
             <li>
                 <i class="fa-solid fa-upload" style="color: #000000;"></i>
-                <a class="menu__item" href="">Добавить музыку</a>
+                <a class="menu__item" href="/musician/add_music">Добавить музыку</a>
             </li>
             <br><br><br>
             <li>

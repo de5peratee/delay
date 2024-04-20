@@ -25,7 +25,7 @@
             </li>
             <li>
                 <i class="fa-solid fa-upload" style="color: #000000;"></i>
-                <a class="menu__item" href="">Добавить музыку</a>
+                <a class="menu__item" href="/musician/add_music">Добавить музыку</a>
             </li>
             <br><br><br>
             <li>
@@ -54,5 +54,26 @@
 </div>
 
 
+<div class="content-wrapper">
+    <div id="genres-block">
+        {!! $genres !!}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#search').on('input', function(){
+                var query = $(this).val();
+                $.ajax({
+                    url: "/search",
+                    data: {query: query},
+                    success: function(data){
+                        $('#genres-block').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+</div>
 </body>
 </html>

@@ -19,3 +19,11 @@ Route::get('/new', function () { return view('new'); });
 Route::get('/popular', function () { return view('popular'); });
 Route::get('/musician', function () { return view('musician'); });
 Route::get('/genres', function () { return view('genres'); });
+
+
+Route::get('/search', [App\Http\Controllers\GenreSearchController::class, 'search']);
+Route::get('/genres', [App\Http\Controllers\GenreSearchController::class, 'index']);
+
+Route::group(['prefix' => 'musician'], function () {
+    Route::get('/add_music', [App\Http\Controllers\AddMusicController::class, 'index']);
+});

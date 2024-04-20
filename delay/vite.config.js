@@ -12,6 +12,8 @@ export default defineConfig({
                 'resources/css/musician.css',
                 'resources/css/genres.css',
                 'resources/css/burgerMenu.css',
+                'resources/css/add_music.css',
+
                 'resources/js/logValidation.js',
                 'resources/js/eyeCheckerReg.js',
                 'resources/js/eyeCheckerLog.js',
