@@ -47,7 +47,9 @@
 
         <div class="text">
             <h3><a href="/login">Уже есть аккаунт</a></h3>
-    </div>
+        </div>
+
+
     </form>
 
 </div>

@@ -80,7 +80,7 @@ body {
 }
 
 
-input {
+input, textarea {
     padding-top: 15px;
     width: 700px;
     border: none;
@@ -92,6 +92,22 @@ input {
     outline: none;
     margin-left: 50px;
 }
+
+textarea {
+    padding-top: 15px;
+    width: 700px;
+    min-height: 20px;
+    max-width: 700px;
+    border: none;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    outline: none;
+    margin-left: 50px;
+}
+
 
 .container {
     align-items: center;
@@ -205,43 +221,6 @@ select option:checked {
     padding-left: 50px;
     font-size: 12px;
 }
-
-.file-upload.valid {
-    border-color: green !important;
-}
-
-.file-upload.invalid {
-    border-color: red !important;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.49);
-}
-
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 80%;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size:35px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-
 
 
 

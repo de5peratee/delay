@@ -1,5 +1,5 @@
-body{
-    background-color: #000000;
+body {
+    background: linear-gradient(to bottom, #000000, #181818) fixed;
 }
 
 body::-webkit-scrollbar {
@@ -129,7 +129,7 @@ body::-webkit-scrollbar {
 .genre-name {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 5px 0;
@@ -139,9 +139,9 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 150px;
     left: 275px;
-    right: 0; /* Добавлено для выравнивания по центру */
+    right: 0;
     width: 100%;
     max-width: 800px;
-    margin: auto; /* Добавлено для выравнивания по центру */
+    margin: auto;
 }
 

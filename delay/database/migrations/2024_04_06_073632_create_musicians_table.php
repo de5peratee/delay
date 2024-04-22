@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('musicians', function (Blueprint $table) {
             $table->id('ID_musician');
+            $table->foreignId('ID_listeners')->constrained('listeners', 'ID_listeners');
             $table->char('Musician_name');
             $table->text('Musician_icon');
             $table->text('Musician_description');

@@ -45,27 +45,30 @@
 #menu__toggle:checked + .menu__btn > span,
 #menu__toggle:checked + .menu__btn > span::before,
 #menu__toggle:checked + .menu__btn > span::after {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 .menu__box {
     display: block;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 250px;
-    height: 250px;
+    height: auto;
     margin: 0;
-    padding: 50px 0;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+
     list-style: none;
-    background-color: #ffffff;
+    background-color: rgba(17, 17, 17, 0.73);
     border-radius: 10px 10px 10px 10px;
     transition-duration: 0.75s;
     z-index: 9998;
+    border: 1px solid #3a3a3a;
 }
 .menu__item {
     display: block;
     padding: 12px;
-    color: #000000;
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 450;
     text-decoration: none;
@@ -83,7 +86,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background: #000000;
+    background: #ffffff;
     transition: 0.3s;
 }
 
@@ -106,7 +109,6 @@
 }
 
 .fa-solid {
-    margin-left: 20px;
 }
 
 

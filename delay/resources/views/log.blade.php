@@ -43,6 +43,10 @@
         <h3><a href="/registration">Зарегистрироваться</a></h3>
     </div>
 
+    <div class="text">
+        <h3><a href="/new">Войти как гость</a></h3>
+    </div>
+
 </div>
 
 </div>

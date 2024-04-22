@@ -10,5 +10,7 @@ class Listeners extends Model implements Authenticatable {
     use HasFactory, \Illuminate\Auth\Authenticatable;
 
     protected $table = 'listeners';
+    protected $primaryKey = 'ID_listeners';
     protected $fillable = ['Login', 'Password', 'Personal_information', 'Status'];
 }
+

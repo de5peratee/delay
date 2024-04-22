@@ -13,10 +13,13 @@ export default defineConfig({
                 'resources/css/genres.css',
                 'resources/css/burgerMenu.css',
                 'resources/css/add_music.css',
+                'resources/css/become_musician.css',
 
                 'resources/js/logValidation.js',
                 'resources/js/eyeCheckerReg.js',
                 'resources/js/eyeCheckerLog.js',
+                'resources/js/add_music_validation.js',
+                'resources/js/become_musician_validation.js',
             ],
             refresh: true,
         }),

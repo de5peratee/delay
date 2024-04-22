@@ -1,5 +1,5 @@
-body{
-    background-color: #000000;
+body {
+    background: linear-gradient(to bottom, #000000, #181818) fixed;
 }
 
 @keyframes gradient {
