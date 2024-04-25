@@ -9,5 +9,7 @@ class Musician extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'ID_musician';
+
     protected $fillable = ['ID_listeners', 'Musician_name', 'Musician_icon', 'Musician_description'];
 }

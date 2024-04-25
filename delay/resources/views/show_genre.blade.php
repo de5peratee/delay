@@ -2,14 +2,11 @@
 <html lang="RU">
 <head>
     <meta charset="UTF-8">
-    @vite(['resources/css/new.css'])
+    @vite(['resources/css/show_genres.css'])
     @vite(['resources/css/burgerMenu.css'])
-    @vite(['resources/js/new.js'])
-    @vite(['resources/js/player.js'])
     <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 <nav>
     <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
@@ -61,54 +58,22 @@
     </div>
 </nav>
 
+<div class="button-box">
+    <a id="back-button" href="javascript:history.back()"> <span style="cursor: pointer;">< Вернуться</span> </a>
+</div>
 
-<div class="input-box">
-    <input type="text" id="search" placeholder="Поиск" required>
-    <div class="filter">
-        <span class="button-text">Фильтр</span>
-        <i class="fa-solid fa-filter"></i>
+<div class="content-wrapper">
+    <div class="genre-info">
+        <div class="genre-icon">
+            <img src="/{{ $genre->Genre_icon }}" alt="{{ $genre->Genre_name }} icon">
+        </div>
+
+        <div class="genre-text">
+            <div class="genre-name">{{ $genre->Genre_name }}</div>
+            <div class="genre-description">{{ $genre->Genre_description }}</div>
+        </div>
     </div>
 </div>
-
-<div class="sidebar">
-    <ul>
-        <li><a class="active" href="/new">Новинки</a></li>
-        <li><a href="/popular"><span>Популярное</span></a></li>
-        <li><a href="/musician"><span>Исполнители</span></a></li>
-        <li><a href="/genres"><span>Жанры</span></a></li>
-    </ul>
-</div>
-
-<div class="scroll-menu">
-    @foreach($tracks as $track)
-        <div class="track">
-            <img src="{{ asset('/storage/' . $track->Track_icon) }}" alt="Иконка трека">
-            <div class="track-info">
-                <div class="i1">
-                    <i class="plus fa-solid fa-plus"></i>
-                </div>
-                <div class="trackName">{{ $track->Track_name }}</div>
-                <div class="trackMusician">{{ $track->musician->Musician_name }}</div>
-                <div class="trackGenre">
-                    <a href="/genres/{{ str_replace(' ', '+', $track->genre->Genre_name) }}">{{ $track->genre->Genre_name }}</a>
-                </div>
-
-            </div>
-            <div class="track-source" hidden>{{ asset('/storage/' . $track->Track_url) }}</div>
-        </div>
-    @endforeach
-</div>
-
-
-<audio id="player"></audio>
-
-<button id="playPause">Play/Pause</button>
-<button id="next">Next</button>
-<input type="range" id="progressBar" min="0" step="1" value="0">
-<button id="prev">Previous</button>
-<button id="shuffle">Shuffle</button>
-<button id="repeat">Repeat</button>
-
 
 
 </body>

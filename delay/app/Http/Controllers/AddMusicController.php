@@ -19,6 +19,7 @@ class AddMusicController
     }
     public function store(Request $request)
     {
+//        dd($request);
 //        $request->validate([
 //            'ID_genre' => 'required|exists:genres,ID_genre',
 //            'Track_name' => 'required|max:255',

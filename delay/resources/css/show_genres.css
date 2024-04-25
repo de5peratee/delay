@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(to bottom, #000000, #181818) fixed;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+@keyframes gradient {
+    0% {border-bottom: 1.5px solid #000;}
+    50% {border-bottom: 1.5px solid #fff;}
+    100% {border-bottom: 1.5px solid #000;}
+}
+
+.input-box input:-webkit-autofill,
+.input-box input:-webkit-autofill:hover,
+.input-box input:-webkit-autofill:focus,
+.input-box input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+@keyframes gradient {
+    0% {border-bottom: 1.5px solid #000;}
+    50% {border-bottom: 1.5px solid #fff;}
+    100% {border-bottom: 1.5px solid #000;}
+}
+
+.container {
+    width: 100%;
+    max-width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.button-box {
+    padding-top: 100px;
+    padding-bottom:30px;
+    text-align: center;
+    padding-right: 650px;
+}
+
+.button-box a {
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffffff;
+    border: none;
+    margin-top: 70px;
+    text-decoration: none;
+}
+
+.content-wrapper {
+    border-radius: 30px;
+    z-index: 0;
+    top: 150px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background: rgba(128, 128, 128, 0.27);
+}
+
+.genre-info {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.genre-text {
+    margin-left: 20px;
+}
+
+.genre-name{
+    padding-top: 20px;
+    text-align: left;
+    align-items: self-start;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: white;
+    cursor: default;
+}
+
+.genre-description{
+    padding-top: 20px;
+    text-align: justify;
+    align-items: self-start;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: white;
+    padding-right: 20px;
+    cursor: default;
+    padding-bottom: 20px;
+}
+
+
+.genre-icon{
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.genre-icon img{
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 0.5s ease, border-radius 0.5s ease;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+    border-radius: 20px;
+}
+
+
+

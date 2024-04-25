@@ -5,6 +5,7 @@
     @vite(['resources/css/genres.css'])
     @vite(['resources/css/burgerMenu.css'])
     <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -29,16 +30,16 @@
                         <i class="fa-solid fa-upload" style="color: #ffffff;"></i>
                         <a class="menu__item" href="/musician/add_music">Добавить музыку</a>
                     </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
+                        <a class="menu__item" href="">О пользователе</a>
+                    </li>
                 @else
                     <li>
                         <i class="fa-solid fa-guitar" style="color: #ffffff;"></i>
                         <a class="menu__item" href="/become_musician" >Стать музыкантом</a>
                     </li>
                 @endif
-                <li>
-                    <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
-                    <a class="menu__item" href="">О пользователе</a>
-                </li>
             @endif
             <div style="color:white;" >
                 ________________________
@@ -73,7 +74,6 @@
         <li><a class="active" href="/genres">Жанры</a></li>
     </ul>
 </div>
-
 
 <div class="content-wrapper">
     <div id="genres-block">

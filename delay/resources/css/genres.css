@@ -58,11 +58,12 @@ body::-webkit-scrollbar {
     color:white;
     padding-left:250px;
     padding-top: 50px;
+    z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
     .sidebar{
-        padding-left: 20px; /* Reduced padding for smaller screens */
+        padding-left: 20px;
     }
 }
 
@@ -107,11 +108,11 @@ body::-webkit-scrollbar {
 }
 
 .container {
-    width: 100%; /* Changed to 100% for responsiveness */
-    max-width: 150px; /* Добавлено для ограничения ширины */
+    width: 100%;
+    max-width: 150px;
     margin: 10px;
     cursor: pointer;
-    float: left; /* Изменено на float */
+    float: left;
 }
 
 .row::after {
@@ -124,6 +125,12 @@ body::-webkit-scrollbar {
     height: 150px;
     background-size: cover;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.genre-block:hover {
+    transform: scale(1.05);
 }
 
 .genre-name {
@@ -136,6 +143,7 @@ body::-webkit-scrollbar {
 }
 
 .content-wrapper {
+    z-index: 0;
     position: absolute;
     top: 150px;
     left: 275px;

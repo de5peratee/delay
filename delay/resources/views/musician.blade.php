@@ -29,16 +29,16 @@
                         <i class="fa-solid fa-upload" style="color: #ffffff;"></i>
                         <a class="menu__item" href="/musician/add_music">Добавить музыку</a>
                     </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
+                        <a class="menu__item" href="">О пользователе</a>
+                    </li>
                 @else
                     <li>
                         <i class="fa-solid fa-guitar" style="color: #ffffff;"></i>
                         <a class="menu__item" href="/become_musician" >Стать музыкантом</a>
                     </li>
                 @endif
-                <li>
-                    <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
-                    <a class="menu__item" href="">О пользователе</a>
-                </li>
             @endif
             <div style="color:white;" >
                 ________________________
