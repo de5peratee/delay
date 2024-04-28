@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="RU">
 <head>
+    <title>delay</title>
     <meta charset="UTF-8">
     @vite(['resources/css/log.css'])
     @vite(['resources/js/eyeCheckerLog.js'])

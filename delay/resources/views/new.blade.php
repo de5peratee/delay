@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="RU">
 <head>
+    <title>Новинки</title>
     <meta charset="UTF-8">
     @vite(['resources/css/new.css'])
     @vite(['resources/css/burgerMenu.css'])
+    @vite(['resources/css/player.css'])
     @vite(['resources/js/new.js'])
     @vite(['resources/js/player.js'])
     <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -63,7 +66,7 @@
 
 
 <div class="input-box">
-    <input type="text" id="search" placeholder="Поиск" required>
+    <input type="text" id="searchNew" placeholder="Поиск" required>
     <div class="filter">
         <span class="button-text">Фильтр</span>
         <i class="fa-solid fa-filter"></i>
@@ -99,17 +102,31 @@
     @endforeach
 </div>
 
+<div class="player" style="display: none; align-items: center;">
+    <audio id="player" controls style="display: none;"></audio>
+    <button class="player-button" id="prev"><i class="fa-solid fa-backward-step"></i></button>
+    <button class="player-button" id="playPause"><i class="fa-solid fa-pause"></i></button>
+    <button class="player-button" id="next"><i class="fa-solid fa-forward-step"></i></button>
+    <div class="track-info-player">
+        <img class="track-icon" src="" alt="Иконка трека">
+        <div>
+            <div class="track-name"></div>
+            <div class="track-musician"></div>
+        </div>
+    </div>
+    <input id="timeSlider" type="range" min="0" step="1" value="0" style="cursor:pointer; width: 700px; color: black !important; background-color: black !important">
 
-<audio id="player"></audio>
+    <div style="display: flex; align-items: center; color: gray; font-family: 'Montserrat', sans-serif; font-weight: lighter;">
+        <span id="currentTimeDisplay" style="font-size: 12px; width: 15px"></span>
+        <span>/</span>
+        <span id="totalTimeDisplay" style="font-size: 12px; margin-left: 5px; width: 10px; padding-right: 40px;"></span>
+    </div>
+    <i id="volumeIcon" class="fa-solid fa-volume-high" style="color: #ffffff; width: 20px; padding-right: 3px"></i>
+    <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1" style="width: 70px; cursor: pointer;">
+    <i id="shuffleIcon" class="fa-solid fa-shuffle" style="color: #a3a3a3; cursor: pointer;  margin-left: 20px"></i>
+    <i id="repeatIcon" class="fa-solid fa-repeat" style="color: #a3a3a3; cursor: pointer; margin-left: 20px"></i>
 
-<button id="playPause">Play/Pause</button>
-<button id="next">Next</button>
-<input type="range" id="progressBar" min="0" step="1" value="0">
-<button id="prev">Previous</button>
-<button id="shuffle">Shuffle</button>
-<button id="repeat">Repeat</button>
-
-
+</div>
 
 </body>
 </html>

@@ -2,17 +2,13 @@
 
 use App\Http\Controllers\AddMusicController;
 use App\Http\Controllers\BecomeMusicianController;
+use App\Http\Controllers\TrackController;
 use App\Http\Controllers\GenreSearchController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Musician;
+use App\Http\Controllers\MusicianController;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\RegistrationController;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/foo', function () {
-    Artisan::call('storage:link');
-});
 
 Route::get('/', function () {
     return redirect('/registration');
@@ -26,7 +22,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/check', [LoginController::class, 'login']);
 
 Route::get('/new', [NewController::class, 'index']);
-
+Route::get('/searchNew', [GenreSearchController::class, 'search']);
 
 
 Route::get('/popular', function () { return view('popular'); });
@@ -35,6 +31,7 @@ Route::get('/genres', function () { return view('genres'); });
 
 
 Route::get('/search', [GenreSearchController::class, 'search']);
+
 Route::get('/genres', [GenreSearchController::class, 'index']);
 Route::get('/genres/{genre_name}', [GenreSearchController::class, 'show']);
 
@@ -47,7 +44,8 @@ Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
 Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
-Route::get('/musician', [Musician::class, 'index']);
+Route::get('/musician', [MusicianController::class, 'index']);
+
 
 
 Route::group(['prefix' => 'musician'], function () {

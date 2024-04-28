@@ -138,7 +138,7 @@ body {
 }
 
 .scroll-menu {
-    margin-left: 150px; /* Отступ слева */
+    margin-left: 150px;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);

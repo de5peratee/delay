@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="RU">
 <head>
+    <title>Жанр</title>
     <meta charset="UTF-8">
     @vite(['resources/css/show_genres.css'])
     @vite(['resources/css/burgerMenu.css'])

@@ -15,6 +15,7 @@ export default defineConfig({
                 'resources/css/add_music.css',
                 'resources/css/become_musician.css',
                 'resources/css/show_genres.css',
+                'resources/css/player.css',
 
                 'resources/js/logValidation.js',
                 'resources/js/eyeCheckerReg.js',
