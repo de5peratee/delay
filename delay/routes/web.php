@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddMusicController;
 use App\Http\Controllers\BecomeMusicianController;
+use App\Http\Controllers\PopularController;
 use App\Http\Controllers\TrackController;
 use App\Http\Controllers\GenreSearchController;
 use App\Http\Controllers\LoginController;
@@ -22,16 +23,16 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/check', [LoginController::class, 'login']);
 
 Route::get('/new', [NewController::class, 'index']);
-Route::get('/searchNew', [GenreSearchController::class, 'search']);
+Route::get('/searchNew', [NewController::class, 'search']);
 
 
-Route::get('/popular', function () { return view('popular'); });
+Route::get('/popular', [PopularController::class, 'index']);
+
+
 Route::get('/musician', function () { return view('musician'); });
-Route::get('/genres', function () { return view('genres'); });
 
 
 Route::get('/search', [GenreSearchController::class, 'search']);
-
 Route::get('/genres', [GenreSearchController::class, 'index']);
 Route::get('/genres/{genre_name}', [GenreSearchController::class, 'show']);
 
@@ -39,14 +40,14 @@ Route::get('/genres/{genre_name}', [GenreSearchController::class, 'show']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
 
+Route::post('/increase-listenings/{id}', [TrackController::class, 'increaseListenings']);
+
+
 Route::get('/become_musician', [BecomeMusicianController::class, 'index']);
 Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
-Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
-
+Route::get('/searchMusician', [MusicianController::class, 'search']);
 Route::get('/musician', [MusicianController::class, 'index']);
-
-
 
 Route::group(['prefix' => 'musician'], function () {
     Route::get('/add_music', [AddMusicController::class, 'index']);

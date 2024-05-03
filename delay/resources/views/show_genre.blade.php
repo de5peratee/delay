@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     @vite(['resources/css/show_genres.css'])
     @vite(['resources/css/burgerMenu.css'])
+    @vite(['resources/css/track.css'])
+    @vite(['resources/css/player.css'])
+    @vite(['resources/js/player.js'])
     <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -76,6 +79,51 @@
     </div>
 </div>
 
+<div class="scroll-menu" style="margin-top: 300px; margin-left: 0;">
+    @foreach($tracks as $track)
+        @if($track->genre->Genre_name == $genre->Genre_name)
+            <div class="track">
+                <img src="{{ asset('/storage/' . $track->Track_icon) }}" alt="Иконка трека">
+                <div class="track-info">
+                    <div class="i1">
+                        <i class="plus fa-solid fa-plus"></i>
+                    </div>
+                    <div class="trackName">{{ $track->Track_name }}</div>
+                    <div class="trackMusician">{{ $track->musician->Musician_name }}</div>
+                    <div class="trackGenre">
+                        <a href="/genres/{{ str_replace(' ', '+', $track->genre->Genre_name) }}">{{ $track->genre->Genre_name }}</a>
+                    </div>
+
+                </div>
+                <div class="track-source" hidden>{{ asset('/storage/' . $track->Track_url) }}</div>
+            </div>
+        @endif
+    @endforeach
+</div>
+<br><br>
+<div class="player">
+    <audio id="player" controls style="display: none;"></audio>
+    <button class="player-button" id="prev"><i class="fa-solid fa-backward-step"></i></button>
+    <button class="player-button" id="playPause"><i class="fa-solid fa-pause"></i></button>
+    <button class="player-button" id="next"><i class="fa-solid fa-forward-step"></i></button>
+    <div class="track-info-player">
+        <img class="track-icon" src="" alt="Track icon">
+        <div>
+            <div class="track-name"></div>
+            <div class="track-musician"></div>
+        </div>
+    </div>
+    <input id="timeSlider" type="range" min="0" step="1" value="0">
+    <div class="time-display">
+        <span id="currentTimeDisplay" style="font-size: 12px; width: 15px"></span>
+        <span>/</span>
+        <span id="totalTimeDisplay" style="font-size: 12px; margin-left: 5px; width: 10px; padding-right: 40px;"></span>
+    </div>
+    <i id="volumeIcon" class="fa-solid fa-volume-high"></i>
+    <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="1">
+    <i id="shuffleIcon" class="fa-solid fa-shuffle"></i>
+    <i id="repeatIcon" class="fa-solid fa-repeat"></i>
+</div>
 
 </body>
 </html>

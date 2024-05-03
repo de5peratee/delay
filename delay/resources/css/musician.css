@@ -24,6 +24,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left:20px;
 }
 
 .input-box input {
@@ -31,7 +32,7 @@ body::-webkit-scrollbar {
     padding-top: 20px;
     height: 100%;
     width: 39%;
-    max-width: 500px; /* Добавлено для ограничения ширины */
+    max-width: 500px;
     outline: none;
     font-size: 15px;
     font-weight: 400;
@@ -106,26 +107,64 @@ body::-webkit-scrollbar {
     text-decoration: none;
 }
 
-.musician-block {
-    height: 150px;
-    background-size: cover;
-    border-radius: 10px;
+.container {
+    width: 100%;
+    max-width: 100px;
+    margin: 10px;
+    cursor: pointer;
+    float: left;
 }
 
-.card{
+.musician-block {
+    height: 100px;
+    background-size: cover;
+    background-position: center; /* Добавлено */
+    background-repeat: no-repeat; /* Добавлено */
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+
+.musician-block:hover {
+    transform: scale(1.05);
+}
+
+.musician-name {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     background-color: transparent;
     color: white;
+    text-align: center;
     padding: 5px 0;
 }
 
 .content-wrapper {
+    z-index: 0;
     position: absolute;
     top: 150px;
-    left: 275px;
+    left: 75px;
     right: 0;
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
+}
+
+.write{
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    font-weight: lighter;
+    font-size: 70px;
+    font-family: Cherish;
+    font-style: italic;
+    background: url('C:/University/WEB-Project/delay/delay/public/background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    cursor:default;
 }

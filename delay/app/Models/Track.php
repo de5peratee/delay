@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Track extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = 'ID_tracks';
     protected $table = 'tracks';
 
     protected $fillable = ['ID_musician', 'ID_genre', 'Track_name', 'Track_icon', 'Track_url', 'Release_date'];
@@ -27,4 +27,10 @@ class Track extends Model
     {
         return self::orderBy('Release_date', 'desc')->get();
     }
+
+    public static function getTracksSortedByListening()
+    {
+        return self::orderBy('countOfListenings', 'desc')->get();
+    }
+
 }

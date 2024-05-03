@@ -109,7 +109,7 @@ input[type=range]::-moz-range-thumb {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 70px;
+    max-width: 85px;
 }
 
 .track-musician {
@@ -118,8 +118,9 @@ input[type=range]::-moz-range-thumb {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 70px;
+    max-width: 85px;
 }
+
 
 .track-icon{
     width: 48px;

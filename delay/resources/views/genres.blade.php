@@ -61,7 +61,9 @@
     </div>
 </nav>
 
-
+<div class="write">
+    delay
+</div>
 
 <div class="input-box">
     <input type="text" id="search" placeholder="Поиск" required>
