@@ -30,6 +30,8 @@ class MusicianController
             abort(404);
         }
 
-        return view('show_musician', ['musician' => $musician]);
+        $tracks = Track::where('ID_musician', $musician->ID_musician)->get();
+
+        return view('show_musician', ['musician' => $musician, 'tracks' => $tracks]);
     }
 }

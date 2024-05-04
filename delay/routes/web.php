@@ -47,9 +47,10 @@ Route::get('/become_musician', [BecomeMusicianController::class, 'index']);
 Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
 Route::get('/searchMusician', [MusicianController::class, 'search']);
-Route::get('/musician', [MusicianController::class, 'index']);
 
 Route::group(['prefix' => 'musician'], function () {
     Route::get('/add_music', [AddMusicController::class, 'index']);
     Route::post('/add_music', [AddMusicController::class, 'store']);
+    Route::get('/', [MusicianController::class, 'index']);
+    Route::get('/show/{musician_name}', [MusicianController::class, 'show']);
 });

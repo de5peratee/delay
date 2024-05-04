@@ -81,7 +81,7 @@
 <div class="content-wrapper">
     @foreach($musicians as $musician)
         <div class="container musician-card" data-name="{{ $musician->Musician_name }}">
-            <a href="/musician/{{ urlencode($musician->Musician_name) }}">
+            <a href="/musician/show/{{ urlencode($musician->Musician_name) }}">
                 <div class="musician-block" style="background-image: url('/storage/{{ $musician->Musician_icon }}')"></div>
             </a>
             <div class="musician-name">{{ $musician->Musician_name }}</div>

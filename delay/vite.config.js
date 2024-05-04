@@ -17,6 +17,7 @@ export default defineConfig({
                 'resources/css/show_genres.css',
                 'resources/css/player.css',
                 'resources/css/track.css',
+                'resources/css/show_musician.css',
 
                 'resources/js/player.js',
                 'resources/js/logValidation.js',

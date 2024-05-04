@@ -133,12 +133,6 @@ a{
     margin-right: 10px;
 }
 
-.track-name, .track-musician {
-    font-size: 14px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-}
-
 #timeSlider {
     cursor: pointer;
     width: 700px;
