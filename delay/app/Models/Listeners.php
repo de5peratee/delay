@@ -12,5 +12,9 @@ class Listeners extends Model implements Authenticatable {
     protected $table = 'listeners';
     protected $primaryKey = 'ID_listeners';
     protected $fillable = ['Login', 'Password', 'Personal_information', 'Status'];
+    public function playlist()
+    {
+        return $this->hasMany(Playlist::class, 'ID_listeners');
+    }
 }
 

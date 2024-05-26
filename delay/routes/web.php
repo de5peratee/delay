@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddMusicController;
 use App\Http\Controllers\BecomeMusicianController;
+use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PopularController;
 use App\Http\Controllers\TrackController;
 use App\Http\Controllers\GenreSearchController;
@@ -35,6 +36,10 @@ Route::get('/musician', function () { return view('musician'); });
 Route::get('/search', [GenreSearchController::class, 'search']);
 Route::get('/genres', [GenreSearchController::class, 'index']);
 Route::get('/genres/{genre_name}', [GenreSearchController::class, 'show']);
+
+Route::post('/addTrack', [PlaylistController::class, 'addTrack']);
+Route::post('/removeTrack', [PlaylistController::class, 'removeTrack']);
+Route::get('/playlistTracks', [PlaylistController::class, 'getPlaylistTracks']);
 
 
 

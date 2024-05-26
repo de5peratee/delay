@@ -126,5 +126,24 @@ img:hover {
     border-radius: 20px;
 }
 
+.write{
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    font-weight: lighter;
+    font-size: 70px;
+    font-family: Cherish;
+    font-style: italic;
+    background: url('C:/University/WEB-Project/delay/delay/public/background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    cursor:default;
+}
+
 
 

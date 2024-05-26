@@ -1,9 +1,9 @@
 .scroll-menu {
-    margin-left: 150px;
+    margin-left: 105px;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
+    width: 900px;
     height: 600px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -16,6 +16,7 @@
 .track {
     display: flex;
     align-items: center;
+    margin: 3px 3px 3px 60px;
     padding-left:7px;
     padding-top:7px;
     padding-bottom:7px;
@@ -23,7 +24,6 @@
     background: #1A1A1A;
     border-radius: 15px;
     width: 600px;
-    margin: 3px;
     transition: all 0.3s ease;
 }
 
@@ -31,6 +31,7 @@
     border:1px solid rgba(255, 255, 255, 0.08);
     background: #252525;
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .track img {
@@ -99,8 +100,12 @@ a{
     padding-top: 13px;
     font-weight: lighter;
 }
-
-.plus{
+.fa-spinner{
+    color: #8A8A8A99;
+    padding: 2px;
+    border-radius: 5px;
+}
+.fa-plus, .fa-check{
     color: #8A8A8A99;
     padding: 2px;
     background: transparent;
@@ -108,11 +113,18 @@ a{
     transition: all 0.3s ease;
 }
 
-.plus:hover{
+.fa-plus:hover, .fa-check:hover{
     color: rgba(255, 255, 255, 0.81);
     background: rgba(255, 255, 255, 0.19);
 }
 
+.hidden-icon {
+    display: none;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
 
 @keyframes gradient {
     0% {

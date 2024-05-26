@@ -23,6 +23,7 @@ let state = {
     currentShuffleIndex: 0,
     playedTracks: []
 };
+let temp=1;
 
 function formatTime(time) {
     let minutes = Math.floor(time / 60);
@@ -38,8 +39,20 @@ async function playTrack(index) {
     let trackUrl = state.tracks[index].querySelector('.track-source').textContent;
     let response = await fetch(trackUrl);
     let blob = await response.blob();
+    if (state.currentTrackIndex === index) {
+        if (!state.player.paused){
+            temp=0;
+            togglePlayPause();
+            return;
+        }
+        if (state.player.paused && temp===0) {
+            temp=1;
+            togglePlayPause();
+            return;
+        }
+    }
     state.player.src = URL.createObjectURL(blob);
-    await state.player.play();
+    state.player.play();
     state.tracks[index].style.background = "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/back2.gif') no-repeat center center fixed";
     state.tracks[index].style.backgroundSize = "cover";
     state.tracks[index].classList.add('playing');
@@ -117,9 +130,9 @@ function prevTrack() {
 
 function togglePlayPause() {
     if (state.player.paused) {
+        state.player.play();
         state.tracks[state.currentTrackIndex].style.background = "url('/back2.gif') no-repeat center center fixed";
         state.tracks[state.currentTrackIndex].style.backgroundSize = "cover";
-        state.player.play();
         document.querySelector(selectors.playPauseButton).innerHTML = '<i class="fa-solid fa-pause"></i>';
     } else {
         state.player.pause();
