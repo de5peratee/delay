@@ -41,12 +41,13 @@ Route::get('/genres/{genre_name}', [GenreSearchController::class, 'show']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::post('/increase-listenings/{id}', [TrackController::class, 'increaseListenings']);
-
+Route::get('/skeleton-load', [TrackController::class, 'index']);
 
 Route::get('/become_musician', [BecomeMusicianController::class, 'index']);
 Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
 Route::get('/searchMusician', [MusicianController::class, 'search']);
+
 
 Route::group(['prefix' => 'musician'], function () {
     Route::get('/add_music', [AddMusicController::class, 'index']);

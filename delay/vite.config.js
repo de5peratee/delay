@@ -25,6 +25,7 @@ export default defineConfig({
                 'resources/js/eyeCheckerLog.js',
                 'resources/js/add_music_validation.js',
                 'resources/js/become_musician_validation.js',
+                'resources/js/lazyLoad.js',
             ],
             refresh: true,
         }),

@@ -113,6 +113,38 @@ a{
     background: rgba(255, 255, 255, 0.19);
 }
 
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.skeleton-block {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: linear-gradient(45deg, #676666, #4d4d4d, #676666);
+    background-size: 200% 200%;
+    animation: gradient 1s linear infinite;
+}
+
+.lazy {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+
 .player {
     display: none;
     align-items: center;
@@ -162,3 +194,4 @@ a{
     cursor: pointer;
     margin-left: 20px;
 }
+

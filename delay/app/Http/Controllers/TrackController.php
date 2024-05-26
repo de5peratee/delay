@@ -17,7 +17,4 @@ class TrackController
         $track->increment('countOfListenings');
         return response()->json(['message' => 'Счетчик прослушиваний увеличен']);
     }
-
-
-
 }

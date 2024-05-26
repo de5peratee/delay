@@ -8,6 +8,7 @@
     @vite(['resources/css/track.css'])
     @vite(['resources/css/player.css'])
     @vite(['resources/js/player.js'])
+    @vite(['resources/js/lazyLoad.js'])
     <script src="https://kit.fontawesome.com/e3b4feb7cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -83,7 +84,8 @@
     @foreach($tracks as $track)
         @if($track->genre->Genre_name == $genre->Genre_name)
             <div class="track">
-                <img src="{{ asset('/storage/' . $track->Track_icon) }}" alt="Иконка трека">
+                <div class="skeleton-block" id="skeleton-{{ $track->ID_tracks }}"></div>
+                <img data-src="{{ asset('/storage/' . $track->Track_icon) }}" alt="Иконка трека" class="lazy" id="image-{{ $track->ID_tracks }}" style="display: none;">
                 <div class="track-info">
                     <div class="i1">
                         <i class="plus fa-solid fa-plus"></i>
@@ -93,9 +95,9 @@
                     <div class="trackGenre">
                         <a href="/genres/{{ str_replace(' ', '+', $track->genre->Genre_name) }}">{{ $track->genre->Genre_name }}</a>
                     </div>
-
                 </div>
                 <div class="track-source" hidden>{{ asset('/storage/' . $track->Track_url) }}</div>
+                <div class="track-id" hidden>{{ $track->ID_tracks }}</div>
             </div>
         @endif
     @endforeach

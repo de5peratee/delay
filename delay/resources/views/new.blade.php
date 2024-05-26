@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/js/player.js'])
+    @vite(['resources/js/lazyLoad.js'])
     @vite(['resources/css/new.css'])
     @vite(['resources/css/burgerMenu.css'])
     @vite(['resources/css/player.css'])
@@ -80,7 +81,8 @@
 <div class="scroll-menu">
     @foreach($tracks as $track)
         <div class="track">
-            <img src="{{ asset('/storage/' . $track->Track_icon) }}" alt="Иконка трека">
+            <div class="skeleton-block" id="skeleton-{{ $track->ID_tracks }}"></div>
+            <img data-src="{{ asset('/storage/' . $track->Track_icon) }}" alt="Иконка трека" class="lazy" id="image-{{ $track->ID_tracks }}" style="display: none;">
             <div class="track-info">
                 <div class="i1">
                     <i class="plus fa-solid fa-plus"></i>
@@ -96,6 +98,7 @@
         </div>
     @endforeach
 </div>
+
 
 
 <div class="player">
