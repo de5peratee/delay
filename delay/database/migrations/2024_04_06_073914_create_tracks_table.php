@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('Track_icon');
             $table->text('Track_url');
             $table->date('Release_date');
+            $table->bigInteger('countOfListenings')->default(0);
             $table->timestamps();
         });
     }

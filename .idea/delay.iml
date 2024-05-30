@@ -204,6 +204,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/delay/vendor/intervention/gif" />
       <excludeFolder url="file://$MODULE_DIR$/delay/vendor/intervention/image" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/james-heinrich/getid3" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

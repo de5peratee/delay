@@ -12,9 +12,9 @@
             @if(Session::has('user'))
                 <li>
                     <i class="fa-solid fa-music" style="color: #ffffff;"></i>
-                    <a class="menu__item" href="">Моя музыка</a>
+                    <a class="menu__item" href="/collection/{{ Session::get('user')->Login }}">Моя музыка</a>
                 </li>
-                @if(Session::get('user')->Status == 'musician')
+            @if(Session::get('user')->Status == 'musician')
                     <li>
                         <i class="fa-solid fa-upload" style="color: #ffffff;"></i>
                         <a class="menu__item" href="/musician/add_music">Добавить музыку</a>

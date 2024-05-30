@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="RU">
 <head>
-    <title>Жанр</title>
+    <title>Исполнитель</title>
     <meta charset="UTF-8">
     @vite(['resources/css/burgerMenu.css'])
     @vite(['resources/css/track.css'])

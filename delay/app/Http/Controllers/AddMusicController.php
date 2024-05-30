@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Musician;
 use App\Models\Track;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -19,14 +21,6 @@ class AddMusicController
     }
     public function store(Request $request)
     {
-//        dd($request);
-//        $request->validate([
-//            'ID_genre' => 'required|exists:genres,ID_genre',
-//            'Track_name' => 'required|max:255',
-//            'Track_icon' => 'required|mimes:png|dimensions:max_width=3000,max_height=3000',
-//            'Track_url' => 'required|mimes:wav',
-//            'Release_date' => 'required|date',
-//        ]);
         $listener = Session::get('user');
         $musician = Musician::where('ID_listeners', $listener->ID_listeners)->first();
 
@@ -46,4 +40,53 @@ class AddMusicController
             return response()->json(['message' => 'Музыкант не найден']);
         }
     }
+
+//    public function storeAlbum(Request $request)
+//    {
+//        dd($request->all());
+//        $listener = Session::get('user');
+//        $musician = Musician::where('ID_listeners', $listener->ID_listeners)->first();
+//
+//        $album = new Album;
+//        $album->ID_musician = $musician->ID_musician;
+//        $album->Album_name = $request->album_track;
+//        $album->Album_icon = $request->file('Album_icon')->store('icons');
+//        $album->Release_date = now();
+//        $album->save();
+//
+//        foreach ($request->file('tracks') as $index => $trackFile) {
+//            $track = new Track;
+//            $track->ID_musician = $musician->ID_musician;
+//            $track->ID_genre = $request->input('genres')[$index];
+//            $track->Track_name = $request->input('track_names')[$index];
+//            $track->Track_icon = $album->Album_icon;
+//            $track->Track_url = $trackFile->store('tracks');
+//            $track->Release_date = now();
+//            $track->ID_album = $album->ID_album;
+//            $track->save();
+//        }
+//
+//        return response()->json(['success' => 'Альбом и треки успешно добавлены!']);
+//    }
+
+        public function show($type)
+    {
+        return view('musician/' . $type);
+    }
+
 }
+//        $request->validate([
+//            'album_track' => 'required|string',
+//            'Track_url' => 'required|image|mimes:png|dimensions:min_width=2000,min_height=2000',
+//            'tracks.*.Track_url' => 'required|file|mimes:wav',
+//            'tracks.*.track_name' => 'required|string',
+//            'tracks.*.genre' => 'required|exists:genres,ID_genre',
+//        ]);
+//        dd($request);
+//        $request->validate([
+//            'ID_genre' => 'required|exists:genres,ID_genre',
+//            'Track_name' => 'required|max:255',
+//            'Track_icon' => 'required|mimes:png|dimensions:max_width=3000,max_height=3000',
+//            'Track_url' => 'required|mimes:wav',
+//            'Release_date' => 'required|date',
+//        ]);

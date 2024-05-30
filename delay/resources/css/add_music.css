@@ -132,6 +132,29 @@ input {
     margin-top: 10px;
 }
 
+.file-upload-album {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    display: inline-block;
+    border: 1px dashed #ffffff;
+    background-color: rgb(17, 17, 17);
+    cursor: pointer;
+    height: 100px;
+    width: 700px;
+    border-radius: 15px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.file-upload-album  input[type='file'] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
 .file-upload input[type='file'] {
     opacity: 0;
     position: absolute;
@@ -194,7 +217,7 @@ select option:checked {
     margin-top: 10px;
 }
 
-.submit-btn:hover, .reset-btn:hover {
+.submit-btn:hover, .reset-btn:hover{
     background-color: rgb(225, 225, 225);
     color: #000000;
 }
@@ -241,6 +264,93 @@ select option:checked {
     display: flex;
 }
 
+.write{
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    font-weight: lighter;
+    font-size: 70px;
+    font-family: Cherish;
+    font-style: italic;
+    background: url('C:/University/WEB-Project/delay/delay/public/background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    cursor:default;
+}
+
+.typesBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.types {
+    border-radius: 15px;
+    width: 700px;
+    height: 200px;
+    background-color: rgba(51, 51, 51, 0.49);
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    border: 2px solid rgba(51, 51, 51, 0.49)
+}
+
+.add-btn{
+    cursor: pointer;
+    border: transparent;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 15px;
+    font-size: large;
+    width: 800px;
+    height: 100px;
+    background-color: rgba(51, 51, 51, 0.49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.types:hover{
+    cursor:pointer;
+    background-color: rgb(51, 51, 51);
+}
+.types:active{
+    background-color: rgb(51, 51, 51);
+}
+
+.typesName{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.delete-track-btn i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.delete-track-btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+    padding-bottom: 20px;
+    margin-right: 40px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
 
 
 

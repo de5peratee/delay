@@ -2,7 +2,7 @@ document.getElementById('image-upload').addEventListener('change', function() {
     var file = this.files[0];
     var uploadTextIcon = document.getElementById('upload-text-icon');
     var iconElement = document.getElementById('icon');
-    var fileUploadElement = this.parentNode; // получение родительского элемента поля ввода
+    var fileUploadElement = this.parentNode;
     if (file) {
         if (file.type !== 'image/png') {
             uploadTextIcon.textContent = 'Файл должен быть в формате .png';

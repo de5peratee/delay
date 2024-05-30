@@ -54,8 +54,19 @@
 }
 
 .trackMusician{
-    font-size:10px;
+    z-index: 3;
+    font-size: 10px;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.trackMusician a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.trackMusician a:hover{
+    color: white;
 }
 
 .trackName, .trackMusician{
@@ -79,7 +90,7 @@
     text-align: center;
 }
 
-a{
+.trackGenre a{
     text-decoration: none;
     color: white;
 }
@@ -122,7 +133,7 @@ a{
     display: none;
 }
 
-img:hover {
+.track img:hover {
     transform: scale(1.1);
 }
 
@@ -207,3 +218,98 @@ img:hover {
     margin-left: 20px;
 }
 
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+}
+
+.modal-left {
+    flex: 1;
+}
+
+.modal-left img {
+    max-width: 100%;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.modal-left img:hover{
+    cursor: pointer;
+}
+
+.modal-right {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-xmark {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #a3a3a3;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fa-xmark:hover,
+.fa-xmark:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2{
+    margin-top: 15px;
+    padding-left: 15px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+p{
+    line-height: 1;
+    color: #b0afaf;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+p a{
+    text-decoration: none;
+    color: white;
+}
+
+p a:hover{
+    border-bottom: 1px solid white;
+}
+
+.block{
+    padding-left: 20px;
+    background-color: rgb(47, 47, 47);
+    border-radius: 15px;
+    width: 250px;
+}

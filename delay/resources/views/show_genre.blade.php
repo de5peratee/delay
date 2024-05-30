@@ -40,9 +40,7 @@
 
 <div class="scroll-menu" style="margin-top: 300px; margin-left: 0;">
     @foreach($tracks as $track)
-        @if($track->genre->Genre_name == $genre->Genre_name)
-            @include('duplicate/scrollmenu')
-        @endif
+        @include('duplicate/scrollmenu')
     @endforeach
 </div>
 

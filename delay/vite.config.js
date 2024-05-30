@@ -18,6 +18,7 @@ export default defineConfig({
                 'resources/css/player.css',
                 'resources/css/track.css',
                 'resources/css/show_musician.css',
+                'resources/css/collection.css',
 
                 'resources/js/player.js',
                 'resources/js/logValidation.js',
@@ -27,6 +28,7 @@ export default defineConfig({
                 'resources/js/become_musician_validation.js',
                 'resources/js/lazyLoad.js',
                 'resources/js/addToCollection.js',
+                'resources/js/add_track_block.js',
             ],
             refresh: true,
         }),

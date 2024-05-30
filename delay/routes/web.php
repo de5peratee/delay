@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddMusicController;
 use App\Http\Controllers\BecomeMusicianController;
+use App\Http\Controllers\MyMusicController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PopularController;
 use App\Http\Controllers\TrackController;
@@ -53,10 +54,16 @@ Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
 Route::get('/searchMusician', [MusicianController::class, 'search']);
 
+Route::get('/musician/{type}', [AddMusicController::class, 'show']);
+
+Route::get('/collection/{listener_name}', [MyMusicController::class, 'index']);
+
+Route::get('/track/{id}', [TrackController::class, 'showModal']);
 
 Route::group(['prefix' => 'musician'], function () {
     Route::get('/add_music', [AddMusicController::class, 'index']);
     Route::post('/add_music', [AddMusicController::class, 'store']);
+    Route::post('/add_music_album', [AddMusicController::class, 'storeAlbum']);
     Route::get('/', [MusicianController::class, 'index']);
     Route::get('/show/{musician_name}', [MusicianController::class, 'show']);
 });
