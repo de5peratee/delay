@@ -21,7 +21,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
-                        <a class="menu__item" href="">О пользователе</a>
+                        <a class="menu__item" href="/musicianProfile">Профиль музыканта</a>
                     </li>
                 @else
                     <li>

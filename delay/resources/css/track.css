@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 900px;
-    height: 600px;
+    height: 510px;
     overflow-y: auto;
     box-sizing: border-box;
 }
@@ -283,9 +283,9 @@
     cursor: pointer;
 }
 
-h2{
-    margin-top: 15px;
-    padding-left: 15px;
+.name {
+    font-size: 20px;
+    margin-top: 5px;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
@@ -313,3 +313,14 @@ p a:hover{
     border-radius: 15px;
     width: 250px;
 }
+
+.block2{
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: rgb(47, 47, 47);
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+}
+

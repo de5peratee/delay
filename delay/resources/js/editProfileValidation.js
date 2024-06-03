@@ -1,11 +1,11 @@
-document.getElementById('image-upload').addEventListener('change', function() {
+document.getElementById('musician_icon').addEventListener('change', function() {
     var file = this.files[0];
     var uploadTextIcon = document.getElementById('upload-text-icon');
     var iconElement = document.getElementById('icon');
     var fileUploadElement = this.parentNode;
     if (file) {
         if (file.type !== 'image/png') {
-            uploadTextIcon.textContent = 'Файл должен быть в формате .png';
+            uploadTextIcon.textContent = ' Файл должен быть в формате .png';
             iconElement.className = 'fa-solid fa-times';
             fileUploadElement.style.borderColor = 'red';
             this.value = '';
@@ -16,6 +16,7 @@ document.getElementById('image-upload').addEventListener('change', function() {
         }
     }
 });
+
 
 document.getElementById('musician_name').addEventListener('input', function() {
     var trackName = this.value;
@@ -49,40 +50,47 @@ document.getElementById('musician_description').addEventListener('input', functi
     }
 });
 
-
-document.querySelector('.reset-btn').addEventListener('click', function() {
-    var fileUploadElements = document.querySelectorAll('.file-upload');
-    fileUploadElements.forEach(function(element) {
-        element.style.borderColor = '';
-    });
-
-    var errorMessages = document.querySelectorAll('.error');
-    errorMessages.forEach(function(element) {
-        element.textContent = '';
-    });
-
-    var uploadTexts = document.querySelectorAll('[id^="upload-text-"]');
-    uploadTexts.forEach(function(element) {
-        if (element.id.includes('icon')) {
-            element.textContent = 'Выберите или перетащите изображение (.png)';
-        } else if (element.id.includes('track')) {
-            element.textContent = 'Выберите или перетащите ваш трек (.wav)';
-        }
-    });
-
-    var icons = document.querySelectorAll('[id^="icon"]');
-    icons.forEach(function(element) {
-        if (element.id.includes('icon')) {
-            element.className = 'fa-solid fa-image';
-        } else if (element.id.includes('track')) {
-            element.className = 'fa-solid fa-compact-disc';
-        }
-    });
-
-    // Сброс цвета рамки полей ввода
-    var inputs = document.querySelectorAll('input, textarea');
-    inputs.forEach(function(input) {
-        input.style.borderColor = 'white';
-    });
+document.getElementById('listener_login').addEventListener('input', function() {
+    var login = this.value;
+    var loginLength = login.length;
+    var errorMessage = document.getElementById('login_error');
+    if (loginLength === 0) {
+        this.style.borderColor = 'red';
+        errorMessage.textContent = 'Логин обязателен';
+    } else if (loginLength > 255) {
+        this.style.borderColor = 'red';
+        errorMessage.textContent = 'Логин не должен превышать 255 символов';
+    } else {
+        this.style.borderColor = 'green';
+        errorMessage.textContent = '';
+    }
 });
 
+document.querySelector('form').addEventListener('submit', function(event) {
+    var isValid = true;
+    var file = document.getElementById('musician_icon').files[0];
+    var trackName = document.getElementById('musician_name').value;
+    var description = document.getElementById('musician_description').value;
+    var login = document.getElementById('listener_login').value;
+    var errorMessage = document.getElementById('submit_error');
+
+    if (file && file.type !== 'image/png') {
+        isValid = false;
+    }
+
+    if (trackName.length === 0 || trackName.length > 255) {
+        isValid = false;
+    }
+
+    if (description.length === 0 || description.length > 255) {
+        isValid = false;
+    }
+
+    if (login.length === 0 || login.length > 255) {
+        isValid = false;
+    }
+
+    if (!isValid) {
+        event.preventDefault();
+    }
+});

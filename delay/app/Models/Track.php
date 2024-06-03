@@ -11,7 +11,7 @@ class Track extends Model
     protected $primaryKey = 'ID_tracks';
     protected $table = 'tracks';
 
-    protected $fillable = ['ID_musician', 'ID_genre', 'Track_name', 'Track_icon', 'Track_url', 'Release_date'];
+    protected $fillable = ['ID_musician', 'ID_genre', 'Track_name', 'Track_icon', 'Track_url', 'Release_date', 'countOfListenings'];
 
     public function genre()
     {
@@ -31,6 +31,10 @@ class Track extends Model
     public static function getTracksSortedByListening()
     {
         return self::orderBy('countOfListenings', 'desc')->get();
+    }
+    public function tracks()
+    {
+        return $this->hasMany(Track::class, 'ID_musician', 'ID_musician');
     }
 
 }

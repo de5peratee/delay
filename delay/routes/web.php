@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AddMusicController;
 use App\Http\Controllers\BecomeMusicianController;
+use App\Http\Controllers\MusicianProfile;
+use App\Http\Controllers\MusicianProfileController;
 use App\Http\Controllers\MyMusicController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PopularController;
@@ -31,9 +33,6 @@ Route::get('/searchNew', [NewController::class, 'search']);
 Route::get('/popular', [PopularController::class, 'index']);
 
 
-Route::get('/musician', function () { return view('musician'); });
-
-
 Route::get('/search', [GenreSearchController::class, 'search']);
 Route::get('/genres', [GenreSearchController::class, 'index']);
 Route::get('/genres/{genre_name}', [GenreSearchController::class, 'show']);
@@ -54,13 +53,23 @@ Route::post('/become_musician', [BecomeMusicianController::class, 'store']);
 
 Route::get('/searchMusician', [MusicianController::class, 'search']);
 
-Route::get('/musician/{type}', [AddMusicController::class, 'show']);
+//Route::get('/musician/{type}', [AddMusicController::class, 'show']);
 
 Route::get('/collection/{listener_name}', [MyMusicController::class, 'index']);
 
 Route::get('/track/{id}', [TrackController::class, 'showModal']);
 
+Route::group(['prefix' => 'musicianProfile'], function () {
+    Route::get('/', [MusicianProfileController::class, 'show']);
+    Route::put('/edit', [MusicianProfileController::class, 'update']);
+    Route::put('/updateTrack/{id}', [MusicianProfileController::class, 'updateTrack']);
+    Route::delete('/deleteTrack/{id}', [MusicianProfileController::class, 'deleteTrack']);
+
+});
+
+
 Route::group(['prefix' => 'musician'], function () {
+    Route::get('/single', [AddMusicController::class, 'show']);
     Route::get('/add_music', [AddMusicController::class, 'index']);
     Route::post('/add_music', [AddMusicController::class, 'store']);
     Route::post('/add_music_album', [AddMusicController::class, 'storeAlbum']);

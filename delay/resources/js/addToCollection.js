@@ -23,33 +23,31 @@ $(document).ready(function() {
             event.stopPropagation();
             var trackId = $(this).closest('.track').find('.track-id').text();
             var icon = $(this);
+            // Обновляем состояние иконки сразу, не дожидаясь ответа от сервера
             if (icon.hasClass('fa-plus')) {
+                icon.removeClass('fa-plus').addClass('fa-check');
+                // AJAX-запрос для добавления трека
                 $.ajax({
                     url: '/addTrack',
                     method: 'POST',
                     data: {
                         ID_tracks: trackId,
                         _token: csrfToken
-                    },
-                    success: function() {
-                        icon.removeClass('fa-plus');
-                        icon.addClass('fa-check');
                     }
                 });
             } else if (icon.hasClass('fa-check')) {
+                icon.removeClass('fa-check').addClass('fa-plus');
+                // AJAX-запрос для удаления трека
                 $.ajax({
                     url: '/removeTrack',
                     method: 'POST',
                     data: {
                         ID_tracks: trackId,
                         _token: csrfToken
-                    },
-                    success: function() {
-                        icon.removeClass('fa-check');
-                        icon.addClass('fa-plus');
                     }
                 });
             }
         });
+
     }
 });

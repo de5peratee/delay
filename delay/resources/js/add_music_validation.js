@@ -45,7 +45,7 @@ document.getElementById('track-upload').addEventListener('change', function() {
                 var audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 audioContext.decodeAudioData(e.target.result, function(buffer) {
                     var duration = buffer.duration;
-                    if (duration > 600) { // проверка длительности (600 секунд = 10 минут)
+                    if (duration > 600) {
                         uploadTextTrack.textContent = 'Длительность трека не должна превышать 10 минут';
                         trackIconElement.className = 'fa-solid fa-times';
                         fileUploadElement.style.borderColor = 'red';

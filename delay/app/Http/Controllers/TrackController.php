@@ -16,7 +16,7 @@ class TrackController
             return response()->json(['message' => 'Трек не найден'], 404);
         }
         $track->increment('countOfListenings');
-        return response()->json(['message' => 'Счетчик прослушиваний увеличен']);
+        return response()->json();
     }
 
     public function showModal($id)

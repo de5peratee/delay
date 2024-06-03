@@ -209,8 +209,6 @@
       <path value="$PROJECT_DIR$/delay/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/delay/vendor/symfony/polyfill-php81" />
       <path value="$PROJECT_DIR$/delay/vendor/composer" />
-      <path value="$PROJECT_DIR$/delay/vendor/intervention/gif" />
-      <path value="$PROJECT_DIR$/delay/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/delay/vendor/james-heinrich/getid3" />
     </include_path>
   </component>

@@ -78,9 +78,9 @@ async function playTrack(index) {
     });
 
     if (response.ok) {
-        console.log('Счетчик прослушиваний увеличен');
+        // console.log('Счетчик прослушиваний увеличен');
     } else {
-        console.error('Ошибка при увеличении счетчика прослушиваний');
+        // console.error('Ошибка при увеличении счетчика прослушиваний');
     }
 }
 

@@ -41,6 +41,15 @@ class AddMusicController
         }
     }
 
+    public function show()
+    {
+        if (Session::has('user') && Session::get('user')->Status == 'musician') {
+            return view('musician/single');
+        } else {
+            return back();
+        }
+    }
+
 //    public function storeAlbum(Request $request)
 //    {
 //        dd($request->all());
@@ -68,11 +77,6 @@ class AddMusicController
 //
 //        return response()->json(['success' => 'Альбом и треки успешно добавлены!']);
 //    }
-
-        public function show($type)
-    {
-        return view('musician/' . $type);
-    }
 
 }
 //        $request->validate([

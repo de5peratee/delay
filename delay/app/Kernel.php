@@ -24,8 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        /*$schedule->command('users:update')->everyMinute();
-        $schedule->command('servers:update')->everyMinute();*/
+        // Здесь могут быть запланированные команды
     }
 
     /**
@@ -36,13 +35,15 @@ class Kernel extends ConsoleKernel
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');
-
         require base_path('routes/console.php');
     }
 
-    protected array $middleware = [
+    /**
+     * The route middleware for the application.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
         // ...
-        \App\Http\Middleware\RangeHeaderSupport::class,
     ];
-
 }

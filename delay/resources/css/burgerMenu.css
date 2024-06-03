@@ -1,5 +1,7 @@
 #menu__toggle {
     opacity: 0;
+    pointer-events: none;
+    display: none;
 }
 #menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
@@ -23,6 +25,18 @@
     height: 26px;
     cursor: pointer;
     z-index: 9999;
+}
+.menu__btn {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .menu__btn > span,
 .menu__btn > span::before,
@@ -110,7 +124,3 @@
 
 .fa-solid {
 }
-
-
-
-

@@ -12,4 +12,9 @@ class Musician extends Model
     protected $primaryKey = 'ID_musician';
 
     protected $fillable = ['ID_listeners', 'Musician_name', 'Musician_icon', 'Musician_description'];
+
+    public function tracks()
+    {
+        return $this->hasMany(Track::class, 'ID_musician', 'ID_musician');
+    }
 }

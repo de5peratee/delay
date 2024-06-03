@@ -3,6 +3,7 @@
 <head>
     <title>Исполнитель</title>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/burgerMenu.css'])
     @vite(['resources/css/track.css'])
     @vite(['resources/css/player.css'])
@@ -39,7 +40,7 @@
     var csrfToken = @json(csrf_token());
 </script>
 
-<div class="scroll-menu" style="margin-top: 300px; margin-left: 0;">
+<div class="scroll-menu" style="margin-top: 260px; margin-left: 0;">
     @foreach($tracks as $track)
         @if($track->musician->Musician_name == $musician->Musician_name)
             @include('duplicate/scrollmenu')

@@ -42,22 +42,26 @@ document.addEventListener('DOMContentLoaded', function() {
                             <i class="fa-solid fa-xmark"></i>
                             <div class="modal-left">
                                 <img src="${this.dataset.src}" alt="Иконка трека">
+                                <div class="block2">
+                                    <div class="name">${data.musician.Musician_name} - ${data.Track_name}</div>
+                                </div>
                             </div>
                             <div class="modal-right">
                                 <div class="modal-info">
-                                    <h2>${data.Track_name}</h2>
                                     <div class="block">
+<!--                                        <p>Название трека: <span style="color: white;">${data.Track_name}</span></p>-->
+                                        <p>Название трека: <a href="/musician/show/${data.musician.Musician_name.replace(/ /g, '+')}">${data.Track_name}</a></p>
                                         <p>Исполнитель: <a href="/musician/show/${data.musician.Musician_name.replace(/ /g, '+')}">${data.musician.Musician_name}</a></p>
                                         <p>Жанр: <a href="/genres/${data.genre.Genre_name.replace(/ /g, '+')}">${data.genre.Genre_name}</a></p>
                                     </div>
                                     <br>
                                     <div class="block">
-                                        <p>Длительность: ${Math.floor(data.Track_duration / 60)}:${('0' + data.Track_duration % 60).slice(-2)}</p>
-                                        <p>Прослушивания: ${data.Play_count}</p>
+                                        <p>Длительность:<span style="color: white;"> ${Math.floor(data.Track_duration / 60)}:${('0' + data.Track_duration % 60).slice(-2)}</span></p>
+                                        <p>Прослушивания:<span style="color: white;"> ${data.Play_count}</span></p>
                                     </div>
                                     <br>
                                     <div class="block">
-                                        <p>Дата выпуска: ${new Date(data.Release_date).toLocaleDateString()}</p>
+                                        <p>Дата выпуска:<span style="color: white;"> ${new Date(data.Release_date).toLocaleDateString()}</span></p>
                                     </div>
                                 </div>
                             </div>

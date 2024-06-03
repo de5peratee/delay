@@ -41,7 +41,7 @@
     var csrfToken = @json(csrf_token());
 </script>
 
-<div class="scroll-menu" style="margin-top: 300px">
+<div class="scroll-menu" style="margin-top: 260px">
     @foreach($tracks as $track)
         @include('duplicate/scrollmenu')
     @endforeach

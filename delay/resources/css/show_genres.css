@@ -118,7 +118,7 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-img:hover {
+.genre-icon img:hover {
     transform: scale(1.1);
     border-radius: 20px;
 }
