@@ -21,6 +21,12 @@ class AddMusicController
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'track_name' => 'required|string|max:255',
+            'Track_icon' => 'required|file|mimes:png|dimensions:width=3000,height=3000',
+            'Track_url' => 'required|file|mimes:wav|duration_max:600',
+        ]);
+
         $listener = Session::get('user');
         $musician = Musician::where('ID_listeners', $listener->ID_listeners)->first();
 
@@ -32,7 +38,6 @@ class AddMusicController
             $track->Track_icon = $request->file('Track_icon')->store('icons');
             $track->Track_url = $request->file('Track_url')->store('tracks');
             $track->Release_date = now();
-            //dd($track);
             $track->save();
 
             return response()->json(['message' => 'Трек успешно загружен']);
@@ -40,6 +45,7 @@ class AddMusicController
             return response()->json(['message' => 'Музыкант не найден']);
         }
     }
+
 
     public function show()
     {
@@ -86,6 +92,7 @@ class AddMusicController
 //            'tracks.*.track_name' => 'required|string',
 //            'tracks.*.genre' => 'required|exists:genres,ID_genre',
 //        ]);
+
 //        dd($request);
 //        $request->validate([
 //            'ID_genre' => 'required|exists:genres,ID_genre',

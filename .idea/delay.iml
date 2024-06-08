@@ -203,6 +203,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/delay/vendor/james-heinrich/getid3" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/minuteoflaravel/laravel-audio-video-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/pbmedia/laravel-ffmpeg" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/php-ffmpeg/php-ffmpeg" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/spatie/temporary-directory" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/delay/vendor/symfony/var-exporter" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

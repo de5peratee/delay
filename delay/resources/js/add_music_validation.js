@@ -32,7 +32,7 @@ document.getElementById('track-upload').addEventListener('change', function() {
     var file = this.files[0];
     var uploadTextTrack = document.getElementById('upload-text-track');
     var trackIconElement = document.getElementById('track');
-    var fileUploadElement = this.parentNode; // получение родительского элемента поля ввода
+    var fileUploadElement = this.parentNode;
     if (file) {
         if (file.type !== 'audio/wav') {
             uploadTextTrack.textContent = 'Файл должен быть в формате .wav';
